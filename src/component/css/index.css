@@ -130,12 +130,18 @@ input{
       height: 110px;
 }
 .aboutus{
-      text-align: center;
+      text-align: left;
       font-weight: bolder;
+      animation-name: example;
+      animation-duration: 10s;
       font-size: 50px;
 }
 .aboutustext{
       text-align: justify;
+}
+@keyframes example{
+      100%{text-align : center;}
+
 }
 .aboutuslogo{
       font-weight: bolder;
