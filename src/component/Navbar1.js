@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar, Form, FormControl, Container } from 'react-bootstrap';
-import { GiOpenBook } from 'react-icons/gi';
+import { GiBookCover } from 'react-icons/gi';
 //import { GoSearch } from 'react-icons/go';
 import { NavLink } from 'react-router-dom'
 import './css/index.css';
@@ -11,10 +11,10 @@ export class Navbar1 extends Component {
         return (
             <div>
                 <Navbar className="navbar" expand="lg">
-                    <Container fluid>
-                        <GiOpenBook size="50px" style={{ marginRight: '10px', color: "#e55400" }} />
+                    <Container fluid id="size">
+                        <GiBookCover size="50px" style={{ marginRight: '10px', color: "#2D3436" }} />
                         <Navbar.Brand style={{ color: 'white', marginRight: '100px' }}>
-                            <NavLink to="/" style={{ color: '#15181b', fontFamily: 'Oswald', fontWeight: 'bold' }}>BOOKTOPUS</NavLink>
+                            <NavLink to="/" className='font1' style={{ fontWeight: 'bold' }}>BOOKTOPUS</NavLink>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">

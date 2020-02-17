@@ -3,22 +3,41 @@ import { RegisterForm } from './RegisterForm';
 import { ConfCode } from './ConfCode';
 import { Table } from 'react-bootstrap'
 
+const emailRegex = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+const formvalid = formerror => {
+    let valid = true;
+
+    Object.values(formerror).forEach(val => {
+        val.length > 0 && (valid = false);
+    });
+    return valid;
+}
 export class Register extends Component {
     state = {
         step: 1,
 
         // step 1
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        password2: '',
-        contact: '',
-        Gender: '',
+        firstName: null,
+        lastName: null,
+        email: null,
+        password: null,
+        password2: null,
+        contact: null,
+        Gender: null,
+
+        formerror: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            password2: '',
+            contact: '',
+            Gender: ''
+        },
 
         // step 2
         code: ''
-    }
+    };
     nextStep = () => {
         const { step } = this.state;
         console.log(this.state);
@@ -33,11 +52,32 @@ export class Register extends Component {
         });
     }
     handleChange = input => e => {
-        this.setState({ [input]: e.target.value });
+        e.preventDefault();
+        const { name, value } = e.target;
+        let formerror = this.state.formerror;
+
+        switch (name) {
+            case 'firstName':
+                formerror.firstName = value.length > 0 && !isNaN('firstName') ? "Please enter the First Name" : "";
+                break;
+            case 'lastName':
+                formerror.lastName = value.length > 0 && !isNaN('lastName') ? "Please Enter the Last Name" : "";
+                break;
+            case 'email':
+                formerror.email = value.length > 0 && emailRegex.test(value) ? "Please Enter the Email Address" : "Your email is inValid";
+                break;
+            case 'password':
+                formerror.lastName = value.length > 0 && value.length < 9 ? "Please Enter the Password Name" : "";
+                break;
+        }
+        this.setState({ formerror, [name]: value }, () => console.log(this.State));
     }
     handleSubmit = (e) => {
 
         e.preventDefault();
+        if (formvalid(this.state.formerror)) {
+
+        }
     }
 
     showStep = () => {

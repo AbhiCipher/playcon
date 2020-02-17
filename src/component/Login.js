@@ -27,7 +27,7 @@ export class Login extends Component {
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
                                     <div className="text-center mt-3 mb-3"><GiOpenBook size="50px" color="black" /></div>
-                                    <h2 className='text-center' style={{ fontFamily: 'Verdana', marginBottom: '20px' }}>BOOKTOPUS</h2>
+                                    <h2 className='text-center' style={{ fontFamily: 'Roboto', marginBottom: '20px' }}>BOOKTOPUS</h2>
                                     <MdPerson size="20px" style={{ marginLeft: '40px', marginRight: '0px' }} />
                                     <Form.Label style={{ marginTop: '5px', fontFamily: 'Verdana', marginLeft: '4px', marginBottom: '1px' }}><h5>Email</h5></Form.Label>
                                     <Form.Control type="email" placeholder="Enter email" style={{ borderRadius: '53px', width: '251px', marginLeft: '40px' }} />
@@ -55,7 +55,7 @@ export class Login extends Component {
                         </td>
                     </tr>
                 </Table>
-            </div>
+            </div >
         )
     }
 }

@@ -20,33 +20,33 @@ export class RegisterForm extends Component {
                     </Form.Group>
                     <Form.Group>
                          <Form.Label>Last Name</Form.Label>
-                         <Form.Control name="lastName" value={values.lastName} placeholder="Enter Last Name" style={{ borderRadius: '53px' }} onChange={handleChange('lastName')} />
+                         <Form.Control name="lastName" value={values.lastName} placeholder="Enter Last Name" style={{ borderRadius: '53px' }} onChange={handleChange('lastName')} required />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicEmail">
                          <Form.Label>Email address</Form.Label>
-                         <Form.Control type="email" name="email" value={values.email} placeholder="Enter E-mail" style={{ borderRadius: '53px' }} onChange={handleChange('email')} />
+                         <Form.Control type="email" name="email" value={values.email} placeholder="Enter E-mail" style={{ borderRadius: '53px' }} onChange={handleChange('email')} required />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
                          <Form.Label>Password</Form.Label>
-                         <Form.Control type="password" placeholder="Enter Password" name="password" style={{ borderRadius: '53px' }} value={values.password} onChange={handleChange('password')} />
+                         <Form.Control type="password" placeholder="Enter Password" name="password" style={{ borderRadius: '53px' }} value={values.password} onChange={handleChange('password')} required />
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
                          <Form.Label>Confirm Password</Form.Label>
-                         <Form.Control type="password" placeholder="Enter Confirm Password" name="password" style={{ borderRadius: '53px' }} value={values.password2} onChange={handleChange('password2')} />
+                         <Form.Control type="password" placeholder="Enter Confirm Password" name="password" style={{ borderRadius: '53px' }} value={values.password2} onChange={handleChange('password2')} required />
                     </Form.Group>
 
                     <Form.Group>
                          <Form.Label>Contact No</Form.Label>
-                         <Form.Control name="contact" value={values.contact} placeholder="Enter Contact No" style={{ borderRadius: '53px' }} onChange={handleChange('contact')} />
+                         <Form.Control name="contact" value={values.contact} placeholder="Enter Contact No" style={{ borderRadius: '53px' }} onChange={handleChange('contact')} required />
                     </Form.Group>
 
-                    <Form.Group>
+                    <Form.Group required>
                          <Form.Label values={values.Gender}><b>Gender</b></Form.Label><br />
                          <Form.Check type="radio" inline name="Gender" value="male" onChange={handleChange('Gender')} />Male
-                              <Form.Check type="radio" inline name="Gender" value="female" style={{ marginLeft: '15px' }} onChange={handleChange('Gender')} />Female
+                         <Form.Check type="radio" inline name="Gender" value="female" style={{ marginLeft: '15px' }} onChange={handleChange('Gender')} />Female
                          </Form.Group>
                     <div className="text-center">
                          <Button variant="primary" type="submit" onClick={this.continue} >Continue</Button>
